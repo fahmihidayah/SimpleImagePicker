@@ -139,6 +139,7 @@ public class ImageCroper {
                     else {
                         if(callBackImageCropper != null){
                             callBackImageCropper.onSuccess(fileCameraPath, currentId);
+                            fileCameraPath = "";
                         }
                     }
                     break;
@@ -152,6 +153,7 @@ public class ImageCroper {
                     else {
                         if(callBackImageCropper != null){
                             callBackImageCropper.onSuccess(filePathGalery, currentId);
+                            fileCameraPath = "";
                         }
                     }
                     break;
@@ -209,7 +211,7 @@ public class ImageCroper {
 
     public void deleteCameraImage(){
 //        String fileCameraPath = Prefs.getString(FILE_CAMERA_PATH, null);
-        if( fileCameraPath != null){
+        if(fileCameraPath != null){
             File file = new File(fileCameraPath);
             if(file.exists()){
                 file.delete();
