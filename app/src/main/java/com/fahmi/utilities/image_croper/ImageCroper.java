@@ -128,6 +128,7 @@ public class ImageCroper {
     }
 
     public void onActivityResult(ImageCroperDelegate imageCroperDelegate, int requestCode, int resultCode, Intent data){
+        System.out.println("result code is " + resultCode + " request code is " + requestCode);
         if(resultCode == Activity.RESULT_OK){
             switch (requestCode){
                 case RC_CAMERA :
@@ -160,12 +161,15 @@ public class ImageCroper {
             }
         }
         else {
-            if(requestCode == RC_CAMERA){
-                File file = new File(fileCameraPath);
+            System.out.println("execute delete file ");
+            File file = new File(fileCameraPath);
+            if(file.exists()){
                 if(file.length() == 0){
                     file.delete();
                 }
             }
+
+
         }
     }
 
