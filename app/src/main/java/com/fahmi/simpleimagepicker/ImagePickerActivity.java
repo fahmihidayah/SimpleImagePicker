@@ -63,6 +63,7 @@ public class ImagePickerActivity extends AppCompatActivity implements ImageCrope
                 Log.d("image cropper error", message);
             }
         });
+        imageCroper.onRestoreInstanceState(savedInstanceState);
     }
 
     @Override
@@ -81,6 +82,7 @@ public class ImagePickerActivity extends AppCompatActivity implements ImageCrope
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         System.out.println("execute onSaveInstanceState");
+        imageCroper.onSaveInstanceState(outState);
     }
 
     @Override
